@@ -12,8 +12,8 @@ public class DemoController {
     private Coach myCoach;
 
     @Autowired
-    public void setCoach(
-            @Qualifier("trackCoach") Coach coach) {
+    public DemoController(
+            @Qualifier("swimCoach") Coach coach) {
         System.out.println(getClass().getSimpleName() + " has been init");
         myCoach = coach;
     }
