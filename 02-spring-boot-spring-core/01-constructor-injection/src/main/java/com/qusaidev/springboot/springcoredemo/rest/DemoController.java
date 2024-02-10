@@ -13,6 +13,7 @@ public class DemoController {
 
     @Autowired
     public void setCoach(@Qualifier("trackCoach") Coach coach) {
+        System.out.println(getClass().getSimpleName() + " has been init");
         myCoach = coach;
     }
 
