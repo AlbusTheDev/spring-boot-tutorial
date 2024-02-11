@@ -1,7 +1,9 @@
 package com.qusaidev.springboot.hibernatejpademo;
 
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class HibernatejpademoApplication {
@@ -10,4 +12,10 @@ public class HibernatejpademoApplication {
 		SpringApplication.run(HibernatejpademoApplication.class, args);
 	}
 
+	@Bean
+	public CommandLineRunner commandLineRunner(String[] args) {
+		return runner -> {
+			System.out.println("Hello World");
+		};
+	}
 }
