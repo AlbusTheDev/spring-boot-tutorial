@@ -13,7 +13,7 @@ public class DemoController {
 
     @Autowired
     public DemoController(
-            @Qualifier("swimCoach") Coach coach) {
+            @Qualifier("aquatic") Coach coach) {
         System.out.println(getClass().getSimpleName() + " has been init");
         myCoach = coach;
     }
