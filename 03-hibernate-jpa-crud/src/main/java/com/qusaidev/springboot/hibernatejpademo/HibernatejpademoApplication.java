@@ -19,9 +19,17 @@ public class HibernatejpademoApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
 		return runner -> {
-			queryForStudentsByLastName(studentDAO);
+
+			updateStudent(studentDAO);
 
 		};
+	}
+
+	private void updateStudent(StudentDAO studentDAO) {
+		Student student = studentDAO.findById(1);
+		student.setFirstName("Scooby");
+		studentDAO.update(student);
+		System.out.println("Student is updated");
 	}
 
 	private void queryForStudentsByLastName(StudentDAO studentDAO) {
