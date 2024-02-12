@@ -20,9 +20,19 @@ public class HibernatejpademoApplication {
 	public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
 		return runner -> {
 
-			updateStudent(studentDAO);
+			deleteAllStudents(studentDAO);
 
 		};
+	}
+
+	private void deleteAllStudents(StudentDAO studentDAO) {
+		System.out.println("Deleting all students...");
+		System.out.println("Number of rows deleted: " + studentDAO.deleteAll());
+	}
+
+	private void deleteStudent(StudentDAO studentDAO) {
+		System.out.println("Deleting student with id 3");
+		studentDAO.delete(3);
 	}
 
 	private void updateStudent(StudentDAO studentDAO) {
