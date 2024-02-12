@@ -17,8 +17,29 @@ public class HibernatejpademoApplication {
 	@Bean
 	public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
 		return runner -> {
-			createStudent(studentDAO);
+			//createStudent(studentDAO);
+			//createMultipleStudents(studentDAO);
+			//readStudent(studentDAO);
 		};
+	}
+
+	private void readStudent(StudentDAO studentDAO) {
+		Student student = studentDAO.findById(1);
+		System.out.println(student);
+	}
+
+	private void createMultipleStudents(StudentDAO studentDAO) {
+
+		System.out.println("Creating new student object...");
+		Student tempStudent = new Student("John", "Doe", "john@qusaidev.com");
+		Student tempStudent2 = new Student("Mary", "Public", "mary@qusaidev.com");
+		Student tempStudent3 = new Student("Bonita", "Applebum", "bonitaa@qusaidev.com");
+
+		System.out.println("Saving the students...");
+		studentDAO.save(tempStudent);
+		studentDAO.save(tempStudent2);
+		studentDAO.save(tempStudent3);
+
 	}
 
 	private void createStudent(StudentDAO studentDAO) {
