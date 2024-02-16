@@ -20,7 +20,7 @@ public class HibernatejpademoApplication {
 	public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
 		return runner -> {
 
-			deleteAllStudents(studentDAO);
+			createMultipleStudents(studentDAO);
 
 		};
 	}
