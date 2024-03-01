@@ -33,6 +33,22 @@
 
     <br><br>
 
+    <label>
+        What is your favorite language:
+        <input type="radio" th:field="*{favLang}" th:each="tempLang : ${langs}"
+               th:value="${tempLang}" th:text="${tempLang}"/>
+    </label>
+
+    <br><br>
+
+    <label>
+        What are your favorite operating systems:
+        <input type="checkbox" th:field="*{favSystems}" th:each="tempSystem : ${systems}"
+            th:value="${tempSystem}" th:text="${tempSystem}"/>
+    </label>
+
+    <br><br>
+
     <input type="submit" value="Submit" />
 </form>
 
