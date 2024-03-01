@@ -27,9 +27,7 @@
     <label>
         Country:
         <select th:field="*{country}">
-            <option th:value="Jordan">Jordan</option>
-            <option th:value="Palestine">Palestine</option>
-            <option th:value="Egypt">Egypt</option>
+            <option th:each="tempCountry : ${countries}" th:value="${tempCountry}" th:text="${tempCountry}"/>
         </select>
     </label>
 
