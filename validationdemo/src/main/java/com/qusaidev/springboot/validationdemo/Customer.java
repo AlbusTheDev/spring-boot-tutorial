@@ -1,5 +1,6 @@
 package com.qusaidev.springboot.validationdemo;
 
+import com.qusaidev.springboot.validationdemo.validation.CourseCode;
 import jakarta.validation.constraints.*;
 
 public class Customer {
@@ -15,6 +16,9 @@ public class Customer {
     @Max(value = 10, message = "must be less than or equal to 10")
     @NotNull(message = "is required")
     private Integer freePasses;
+
+    @CourseCode
+    private String courseCode;
 
     public Customer() {
     }
@@ -41,5 +45,13 @@ public class Customer {
 
     public void setFreePasses(Integer freePasses) {
         this.freePasses = freePasses;
+    }
+
+    public String getCourseCode() {
+        return courseCode;
+    }
+
+    public void setCourseCode(String courseCode) {
+        this.courseCode = courseCode;
     }
 }

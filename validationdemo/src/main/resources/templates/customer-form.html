@@ -34,11 +34,21 @@
     <br><br>
 
     <label>
-        Free passes: <input type="text" th:field="*{freePasses}" />
+        * Free passes: <input type="text" th:field="*{freePasses}" />
     </label>
 
     <span th:if="${#fields.hasErrors('freePasses')}"
           th:errors="*{freePasses}"
+          class="error"></span>
+
+    <br><br>
+
+    <label>
+        * Course code: <input type="text" th:field="*{courseCode}" />
+    </label>
+
+    <span th:if="${#fields.hasErrors('courseCode')}"
+          th:errors="*{courseCode}"
           class="error"></span>
 
     <br><br>
