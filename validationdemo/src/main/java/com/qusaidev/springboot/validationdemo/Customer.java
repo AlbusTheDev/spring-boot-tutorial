@@ -13,6 +13,7 @@ public class Customer {
 
     @Min(value = 0, message = "must be greater than or equal to 0")
     @Max(value = 10, message = "must be less than or equal to 10")
+    @NotNull(message = "is required")
     private Integer freePasses;
 
     public Customer() {
@@ -38,7 +39,7 @@ public class Customer {
         return freePasses;
     }
 
-    public void setFreePasses(int freePasses) {
+    public void setFreePasses(Integer freePasses) {
         this.freePasses = freePasses;
     }
 }
