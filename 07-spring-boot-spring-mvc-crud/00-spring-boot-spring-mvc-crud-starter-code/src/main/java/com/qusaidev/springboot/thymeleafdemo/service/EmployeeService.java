@@ -1,6 +1,6 @@
-package com.luv2code.springboot.cruddemo.service;
+package com.qusaidev.springboot.thymeleafdemo.service;
 
-import com.luv2code.springboot.cruddemo.entity.Employee;
+import com.qusaidev.springboot.thymeleafdemo.entity.Employee;
 
 import java.util.List;
 
