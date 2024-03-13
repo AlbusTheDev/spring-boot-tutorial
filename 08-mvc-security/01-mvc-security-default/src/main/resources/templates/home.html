@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Qusai-Dev Company Home Page</title>
@@ -9,6 +9,11 @@
     <h2>Qusai-Dev Company Home Page - Wow</h2>
     <hr>
     Welcome to the Qusai-Dev company home page
+
+    <br>
+    <form action="#" th:action="@{/logout}" method="post">
+        <input type="submit" value="Logout">
+    </form>
 
 </body>
 </html>
