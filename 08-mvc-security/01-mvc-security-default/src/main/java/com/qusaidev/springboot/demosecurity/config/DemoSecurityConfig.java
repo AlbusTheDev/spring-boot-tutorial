@@ -46,6 +46,9 @@ public class DemoSecurityConfig {
                         .requestMatchers("/systems/**").hasRole("ADMIN")
                         .anyRequest().authenticated()
 
+        ).exceptionHandling(
+                configurer ->
+                        configurer.accessDeniedPage("/access-denied")
         ).formLogin(form ->
                 form
                         .loginPage("/showMyLoginPage")
