@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/extras/spring-security">
 <head>
     <meta charset="UTF-8">
     <title>Qusai-Dev Company Home Page</title>
@@ -10,6 +10,12 @@
     <hr>
     Welcome to the Qusai-Dev company home page
 
+    <p>
+        User: <span sec:authentication="principal.username"></span>
+        <br><br>
+        Role(s): <span sec:authentication="principal.authorities"></span>
+
+    </p>
     <br>
     <form action="#" th:action="@{/logout}" method="post">
         <input type="submit" value="Logout">
