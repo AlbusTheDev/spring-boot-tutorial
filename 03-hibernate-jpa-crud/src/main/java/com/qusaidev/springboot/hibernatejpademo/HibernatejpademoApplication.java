@@ -18,11 +18,7 @@ public class HibernatejpademoApplication {
 
 	@Bean
 	public CommandLineRunner commandLineRunner(StudentDAO studentDAO) {
-		return runner -> {
-
-			createMultipleStudents(studentDAO);
-
-		};
+		return runner -> createMultipleStudents(studentDAO);
 	}
 
 	private void deleteAllStudents(StudentDAO studentDAO) {
