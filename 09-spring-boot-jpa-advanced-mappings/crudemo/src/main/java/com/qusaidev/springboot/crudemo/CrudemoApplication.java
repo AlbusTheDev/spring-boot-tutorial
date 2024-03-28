@@ -18,8 +18,18 @@ public class CrudemoApplication {
     @Bean
     public CommandLineRunner commandLineRunner(AppDAO appDAO) {
         return runner -> {
-            deleteInstructor(appDAO);
+            findInstructorDetail(appDAO);
         };
+    }
+
+    private void findInstructorDetail(AppDAO appDAO) {
+        int id = 2;
+
+        InstructorDetail instructorDetail = appDAO.findInstructorDetailById(id);
+
+        System.out.printf("Found instructor with instructor detail id %d: %s %s%n",
+                id, instructorDetail.getInstructor().getFirstName(),
+                instructorDetail.getInstructor().getLastName());
     }
 
     private void deleteInstructor(AppDAO appDAO) {
